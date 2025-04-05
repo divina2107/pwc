@@ -1,0 +1,388 @@
+Practical No:1
+Aim: Basic Programs (Variables, Operators): 
+A. Write a program to find the addition, subtraction, multiplication, and division of two numbers. 
+B. Write a program to find the area of rectangle, square and circle. 
+C. Write a program to find the volume of a cube, sphere, and    cylinder.
+
+
+CODE:
+A. Write a program to find the addition, subtraction, multiplication, and division.
+
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+  int a, b;
+  clrscr();
+  a = 20;
+  b = 5;
+  printf("THE SUM IS %d \n", a + b);
+  printf("THE PRODUCT IS %d \n", a * b);
+  printf("THE SUBTRACTION IS %d \n", a - b);
+  printf("THE DIVISION IS %d", a / b);
+  getch();
+}
+
+CODE:
+B. Write a program to find the area of rectangle, square and circle.
+
+.Area of the rectangle 
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+  int length, breath;
+  clrscr();
+  length = 20;
+  breath = 20;
+  printf("THE AREA OF RECTANGLE IS %d \n", length * breath);
+  getch();
+}
+
+. Area of the square.
+
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+  int side;
+  clrscr();
+  side = 4;
+  printf("THE AREA OF SQUARE IS %d \n", side * side);
+  getch();
+}
+
+. Area of circle.
+
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+  int radius;
+  clrscr();
+  radius = 5;
+  printf("THE AREA OF CIRCLE IS %f \n", 3.14 * radius * radius);
+  getch();
+}
+
+Practical No:2
+Aim: 
+A. Programs to demonstrate data input and output functions.
+B. Programs to manipulate strings.
+
+CODE:
+A.	Programs to demonstrate data input and output functions.
+
+
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+  int num;
+  clrscr();
+  printf("ENTER THE NUMBER");
+  scanf("%d", &num);
+  printf("THE GIVEN NUMBER IS %d", num);
+  getch();
+}
+
+Practical No:3
+Aim: Conditional statements and loops 
+A. Write a program to check whether the number is even or odd. 
+B. Write a program to check whether the number is positive, negative or zero. 
+C. Write a program to find the sum of squares of digits of a number. 
+D. Write a program to reverse the digits of an integer.
+
+
+CODE:
+A. Write a program to check whether the number is even or odd
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+  int num;
+  clrscr();
+  printf("ENTER THE NUMBER");
+  scanf("%d", &num);
+  if (num % 2 == 0) {
+    printf("%d is a even number", num);
+  } else {
+    printf("%d is a odd number", num);
+  }
+  getch();
+}
+
+CODE:
+B. Write a program to check whether the number is positive, negative or zero. 
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+  int num;
+  clrscr();
+  printf("ENTER THE NUMBER");
+  scanf("%d", &num);
+  if (num > 0) {
+    printf("%d is a positive number", num);
+  } else if (num < 0) {
+    printf("%d is a negative number", num);
+  } else {
+    printf("Given number is ZERO", num);
+  }
+  getch();
+}
+
+CODE:
+C. Write a program to find the sum of squares of digits of a number. 
+
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+  int num;
+  int i;
+  int sumsqr = 0;
+  clrscr();
+  printf("ENTER THE NUMBER");
+  scanf("%d", &num);
+  for (i = 1; i <= num; i++) {
+    sumsqr = sumsqr + i * i;
+  }
+  printf("The sum square of given number is %d", sumsqr);
+  getch();
+}
+
+CODE:
+D. Write a program to reverse the digits of an integer.
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+  int num;
+  int r;
+  int rev = 0;
+  clrscr();
+  printf("ENTER THE NUMBER");
+  scanf("%d", &num);
+  while (num != 0) {
+    r = num % 10;
+    rev = rev * 10 + r;
+    num = num / 10;
+  }
+  printf("The reverse order of given number is %d", rev);
+  getch();
+}
+
+Practical No:4
+Aim: Programs on Functions.
+
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+  int i, a, b, x, y, hcf = 0, lcm = 0;
+  clrscr();
+  printf("Enter the no-1 and no- 2 \n");
+  scanf("%d %d", &a, &b);
+  for (i = 1; i <= a; i++) {
+    if (a % i == 0 && b % i == 0) {
+      hcf = i;
+    }
+  }
+  lcm = (a * b) / hcf;
+  printf("The HCF=%d and LCM=%d", hcf, lcm);
+  getch();
+}
+
+Practical No:5
+Aim: Recursive functions 
+1. Write a program to find the factorial of a number using a recursive function. 
+2. Write a program to find the sum of natural numbers using a recursive function.
+
+CODE:
+1. Write a program to find the factorial of a number using a recursive function. 
+#include <stdio.h>
+#include <conio.h>
+
+int factorial(int num) {
+  if (num == 1) {
+    return num;
+  } else {
+    return num * factorial(num - 1);
+  }
+}
+int main() {
+  clrscr();
+  printf("%d", factorial(5));
+  getch();
+  return 1;
+}
+
+CODE:
+2. Write a program to find the sum of natural numbers using a recursive function.
+#include <stdio.h>
+#include <conio.h>
+
+int sumNatural(int num) {
+  if (num == 1) {
+    return num;
+  } else {
+    return num + sumNatural(num - 1);
+  }
+}
+
+int main() {
+  clrscr();
+  printf("%d", sumNatural(5));
+  getch();
+  return 1;
+}
+
+Practical No:6
+Aim: Arrays
+A. Write a program to find the largest value that is stored in the array. 
+B. Write a program using pointers to compute the sum of all elements stored in an array.
+C. Write a program to arrange the ‘n’ numbers stored in the array in ascending and descending order.
+
+Code:
+A. Write a program to find the largest value that is stored in the array. 
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+  int ar[10] = {2, 5, 7, 1, 20000, 0, 11, 1000, 33, 21};
+  int max = ar[0];
+  int i;
+  clrscr();
+  for (i = 0; i < 10; i++) {
+    if (ar[i] > max) {
+      max = ar[i];
+    }
+  }
+  printf("The max:%d", max);
+  getch();
+}
+
+Code:
+B.	Write a program using pointers to compute the sum of all elements stored in an array.
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+  int ar[5] = {11, 10, 2, 1};
+  int *ptr = ar;
+  int sum = 0, k = 0;
+  clrscr();
+  for (k = 0; k < 5; k++) {
+    sum += *ptr;
+    ptr++;
+  }
+  printf("%d", sum);
+  getch();
+}
+
+C. Write a program to arrange the ‘n’ numbers stored in the array in ascending and descending order.
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+  int ar[10] = {11, 10, 2, 1};
+  int max;
+  int i, j, temp = 0, k = 0;
+  clrscr();
+  for (i = 0; i < 10; i++) {
+    for (j = 0; j < 10; j++) {
+      if (ar[j] > ar[j + 1]) {
+        temp = ar[j];
+        ar[j] = ar[j + 1];
+        ar[j + 1] = temp;
+      }
+    }
+  }
+  for (k = 0; k < 10; k++) {
+    printf("%d", ar[k]);
+  }
+  getch();
+}
+
+Practical No:7
+Aim: pointers
+A. Write a program to demonstrate the use of pointers.
+B. Write a program to perform addition and subtraction of two pointer variables.
+
+Code:
+A. Write a program to demonstrate the use of pointers.
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+  int a = 5;
+  int *ptr = &a;
+  clrscr();
+  printf("The value in ptr=%d \n", *ptr);
+  printf("The value in a=%d", a);
+  getch();
+}
+
+Code:
+B. Write a program to perform addition and subtraction of two pointer variables
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+  int a = 5;
+  int b = 10;
+  int *p1 = &a;
+  int *p2 = &b;
+  clrscr();
+  printf("Addition=%d \n", *p1 + *p2);
+  printf("Subtraction=%d", *p1 - *p2);
+  getch();
+}
+
+Practical No:8
+Aim: File handling
+A. Write a program to Create a File, Write in it, And Close the File. 
+B. Write a program to Open a File, Read from it, And Close the File.
+
+Code:
+A.	Write a program to Create a File, Write in it, And Close the File. 
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+  FILE *fp;
+  int n;
+  clrscr();
+  fp = fopen("Number.dat", "w");
+  if (fp == NULL) {
+    printf("Can't open file");
+    exit(0);
+  }
+  printf("Enter an Integer");
+  scanf("%d", &n);
+  fprintf(fp, "%d", n);
+  fclose(fp);
+  getch();
+}
+
+Code:
+B.	Write a program to Open a File, Read from it, And Close the File
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+
+void main() {
+  FILE *fp;
+  int n;
+  clrscr();
+  fp = fopen("Number.dat", "r");
+  if (fp == NULL) {
+    printf("Can't open file");
+    exit(0);
+  }
+  fscanf(fp, "%d", &n);
+  printf("Entered number is : %d", n);
+  getch();
+}
